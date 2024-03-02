@@ -1,0 +1,8 @@
+alias open='xdg-open'
+alias wget='wget --no-hsts'
+alias ls='ls --color=always --group-directories-first'
+alias ll='ls -l --color=always --group-directories-first'
+alias la='ls -l --color=always --group-directories-first'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'

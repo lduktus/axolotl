@@ -29,12 +29,16 @@ rpm-ostree install \
     libvirt \
     libvirt-dbus \
     virt-install \
+    virt-manager \
+    vagrant \
+    vagrant-libvirt \
     qemu \
     qemu-kvm \
     ncdu \
     pop-icon-theme \
     rsync \
     rclone \
+    setroubleshoot-server \
     tailscale \
     wireguard-tools
 

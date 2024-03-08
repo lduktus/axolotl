@@ -30,7 +30,7 @@ jobs:
             Containerfile
       - name: Push To Registry
         id: push-image
-        uses: redhat-actions/push-to-registry@v2.7
+        uses: redhat-actions/push-to-registry@v2.8
         with:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}

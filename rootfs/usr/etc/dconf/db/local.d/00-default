@@ -1,8 +1,7 @@
 [org/gnome/shell]
-favorite-apps=['org.gnome.Nautilus.desktop', 'Alacritty.desktop']
+favorite-apps=['org.gnome.Nautilus.desktop']
 
 [org/gnome/desktop/interface]
-gtk-theme='adw-gtk3'
 monospace-font-name='Intel One Mono 10'
 
 [/org/gnome/nautilus/list-view]

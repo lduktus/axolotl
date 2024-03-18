@@ -1,7 +1,7 @@
 enable rpm-ostreed-automatic.timer
-# see: /usr/lib/systemd/system/dconf-update.service
 enable dconf-update.service
 enable firewalld.service
 enable libvirtd.service
 enable podman.socket
+enable swtpm-workaround.service
 enable tailscaled.service

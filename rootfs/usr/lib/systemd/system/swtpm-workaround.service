@@ -1,0 +1,17 @@
+[Unit]
+Description=Workaround swtpm not having the correct label
+Documentation=https://github.com/ostreedev/ostree-rs-ext/issues/510
+ConditionFileIsExecutable=/usr/bin/swtpm
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/.swtpm ] || /usr/bin/cp /usr/bin/swtpm /usr/local/bin/.swtpm"
+ExecStartPre=/usr/bin/mount --bind /usr/local/bin/.swtpm /usr/bin/swtpm
+ExecStart=/usr/sbin/restorecon /usr/bin/swtpm
+ExecStop=/usr/bin/umount /usr/bin/swtpm
+ExecStop=/usr/bin/rm /usr/local/bin/.swtpm
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

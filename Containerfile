@@ -1,4 +1,4 @@
-ARG VERSION=39
+ARG VERSION=40
 ARG IMG_NAME=axolotl
 FROM quay.io/fedora/fedora-silverblue:${VERSION}
 

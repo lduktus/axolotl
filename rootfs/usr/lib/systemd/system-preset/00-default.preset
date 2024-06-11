@@ -1,7 +1,12 @@
+# default
 enable rpm-ostreed-automatic.timer
-enable dconf-update.service
 enable firewalld.service
-enable libvirtd.service
 enable podman.socket
-enable swtpm-workaround.service
+# layered
+enable libvirtd.service
+enable incus.service
 enable tailscaled.service
+# custom 
+enable brew-startup.service
+enable dconf-update-workaround.service
+enable swtpm-workaround.service

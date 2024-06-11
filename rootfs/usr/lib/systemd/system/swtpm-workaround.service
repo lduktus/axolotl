@@ -1,3 +1,4 @@
+# see: https://github.com/ublue-os/bluefin/blob/e0c0c73b9fe7a08761c1636b6d945ca1437d8e8a/system_files/dx/usr/lib/systemd/system/swtpm-workaround.service#L4
 [Unit]
 Description=Workaround swtpm not having the correct label
 Documentation=https://github.com/ostreedev/ostree-rs-ext/issues/510
@@ -6,11 +7,11 @@ After=local-fs.target
 
 [Service]
 Type=oneshot
-ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/.swtpm ] || /usr/bin/cp /usr/bin/swtpm /usr/local/bin/.swtpm"
-ExecStartPre=/usr/bin/mount --bind /usr/local/bin/.swtpm /usr/bin/swtpm
+ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/swtpm ] || /usr/bin/cp /usr/bin/swtpm /usr/local/bin/overrides/swtpm"
+ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/swtpm /usr/bin/swtpm
 ExecStart=/usr/sbin/restorecon /usr/bin/swtpm
 ExecStop=/usr/bin/umount /usr/bin/swtpm
-ExecStop=/usr/bin/rm /usr/local/bin/.swtpm
+ExecStop=/usr/bin/rm /usr/local/bin/overrides/swtpm
 RemainAfterExit=yes
 
 [Install]
